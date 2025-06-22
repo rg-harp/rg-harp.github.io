@@ -8,6 +8,7 @@
         <link href="css/styles.css" rel="stylesheet" />
         <style>
             hr {width: 50%; margin: auto;}
+            pre {width: fit-content; margin: 0px auto; text-align: left;}
         </style>
     </head>
     <body id="page-top">
@@ -17,19 +18,18 @@
     <body>
         <div class="container text-center">
             <h1>Simple tunes for learning to play harmonica</h1>
-            <p><b>Mainly for Diatonic (aka "blues" or "Richter" - generally with 10 holes)<br/>
+            <p><b>Mainly for Diatonic (aka "Blues" or "Richter" - with 10 holes)<br/>
             but most tunes are playable on tremolo also (and surely all are good for chromatic).</b></p>
 
-            <p>When we just start learning how to play harmonica, many decide "to find tabs for this or
-            	that cool song" and try to study from this specific song. This may lead to frustration,
-            	as not all interesting songs have good and easy melody. I suggest trying different approach -
-            	here comes a list of tunes of some traditional, some well-known, some kids songs <b>which could be really quickly learned</b>
-            	- they mainly are not limited to "blues" genre (but you may make them sound bluesy).</p>
+            <p>Start with harmonica, many of us decide "to find tabs for this cool song I like"
+                and try to play them. This may lead to frustration as not all tunes are good for beginner.
+                Let's try a different approach - we'll make a list of tunes of some traditional,
+                some well-known, some kids songs <b>which could be really quickly learned</b>.</p>
 
-            <p>Ordered weakly according to increase in "complexity". Anyway they all are simple and could
-            	be learned in a few days (all together). Learning to play them well is a different thing.
-            	I'm going to <b>label those requiring bends</b> to easily pick some for specific practice.
-                Also by and by I'll add small videos - demonstrating the tunes and perhaps telling a bit about them.</p>
+            <p>Take few first in direct order, as the corresponding videos have some hints and explanations.
+                Anyway they all are simple and could be learned in a few days (all together).
+                Learning to play them well is a different thing - but you'll have a time to improve after
+                you are basically acquainted with your harmonica.</p>
             
             <p>Don't feel bound to play these tunes "as is" - you can experiment with them as your
             	experience grows - and surely feel free to reuse them to create some music you can call your own!</p>
@@ -37,12 +37,16 @@
             <hr/>
             
             <h3>When the Saints go marching in</h3>
-            <p>Bright and well-known tune - and <b>just 5 notes in the in the middle region of your harp</b>!
-            	Nevertheless vast field for variations and experiments!</p>
+            <p>Bright and well-known tune of hymn / spiritual origins - and
+                <b>just 5 notes in the in the middle region of your harp</b>!
+            	Nevertheless vast field for variations and experiments!
+            	<a href="#" class="show-me" data="saints"></a></p>
             <hr/>
             
             <h3>Frere Jacques</h3>
-            <p>Infamous French children's song with a pleasant simple tune (7 notes) - but giving some practice on rythm and speed!</p>
+            <p>Infamous French children's song with a pleasant simple tune (7 notes) -
+                gives practice on rythm and speed!
+                <a href="#" class="show-me" data="frere"></a></p>
             <hr/>
 
             <h3>Flea Waltz (Flohwalzer)</h3>
@@ -110,5 +114,21 @@
             
             <h3>Reveille</h3>
         </div>
+        <script src="js/jq.js"></script>
+        <script>
+        $(function() {
+            function showMe() {
+                var url = $(this).attr('data');
+                var elem = $(this).parent().next();
+                if (elem.prop('tagName') != 'DIV') {
+                    elem = $('<div></div>').insertBefore(elem);
+                }
+                elem.load('./' + url + '.html');
+                return false;
+            }
+        
+            $('a.show-me').text('Show me!').click(showMe);
+        });
+        </script>
     </body>
 </html>
