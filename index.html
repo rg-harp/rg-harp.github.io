@@ -21,15 +21,16 @@
             <p><b>Mainly for Diatonic (aka "Blues" or "Richter" - with 10 holes)<br/>
             but most tunes are playable on tremolo also (and surely all are good for chromatic).</b></p>
 
-            <p>Start with harmonica, many of us decide "to find tabs for this cool song I like"
-                and try to play them. This may lead to frustration as not all tunes are good for beginner.
-                Let's try a different approach - we'll make a list of tunes of some traditional,
-                some well-known, some kids songs <b>which could be really quickly learned</b>.</p>
-
-            <p>Take few first in direct order, as the corresponding videos have some hints and explanations.
-                Anyway they all are simple and could be learned in a few days (all together).
-                Learning to play them well is a different thing - but you'll have a time to improve after
-                you are basically acquainted with your harmonica.</p>
+            <p>I am learning to play harmonica myself - and I'm going to put here a list of tunes I practice
+            	with explanations so that you can learn and play them too. They are ordered roughly starting
+            	from the simplest ones.</p>
+            
+            <p>Here'll be "tabs" for some of tunes, but mainly we are going to learn with short videos in the
+            	following manner:<br/>
+            	    <b>1.</b> I'll play the whole tune and perhaps add some words about it<br/>
+            	    <b>2.</b> We look in more details how to play the starting phrase<br/>
+            	    <b>3.</b> You now have to pick the rest "by ear" for exercise<br/>
+            	    <b>4.</b> Few comments on further "extending" the tune.</p>
             
             <p>Don't feel bound to play these tunes "as is" - you can experiment with them as your
             	experience grows - and surely feel free to reuse them to create some music you can call your own!</p>
@@ -120,13 +121,18 @@
         <script src="js/jq.js"></script>
         <script>
         $(function() {
+            function hideIt() {
+                $(this).parent().remove();
+            }
             function showMe() {
                 var url = $(this).attr('data');
                 var elem = $(this).parent().next();
                 if (elem.prop('tagName') != 'DIV') {
                     elem = $('<div></div>').insertBefore(elem);
                 }
-                elem.load('./' + url + '.html');
+                elem.load('./' + url + '.html', () => {
+                    elem.prepend($('<a href="#">Hide It!</a><br/>').click(hideIt));
+                });
                 return false;
             }
         
