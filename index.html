@@ -9,6 +9,7 @@
         <style>
             hr {width: 50%; margin: auto;}
             pre {width: fit-content; margin: 0px auto; text-align: left;}
+            .show-me, .hide-it {font-weight: bold;}
             .tags {display: block;}
             .tags em {padding: 5px; border-radius: 5px;}
             .tags .major {background-color: orange;}
@@ -74,17 +75,21 @@
 
             <h3>Sleep you my joy, sleep you well (Schlafe, mein Prinzchen, schlaf ein)</h3>
             <p><span class="tags"><em class="major">major</em> <em class="bend">bend-4</em></span>
-                German lullaby of 200+ years old, easy and relaxing tune which allows you practicing <b>bend on 6-th hole</b>.</p>
+                German lullaby of 200+ years old, easy and relaxing tune which allows you practicing simple bend,
+                while overall it is played only with 3 middle holes again.
+                <a href="#" class="show-me" data="sleepyou"></a></p>
             <hr/>
 
+            <h3>Three Little Pigs song (Who's afraid of Big Bad Wolf?)</h3>
+            <p><span class="tags"><em class="major">major</em> <em class="low">low</em></span>
+                From Disney's cartoon of 1933 - infamous creation of Frank Churchill - we want to learn it
+                for its wider range of holes and quick succession on notes.
+                <a href="#" class="show-me" data="threepigs"></a></p>
+            <hr/>
+            
             <!-- <h3>In wilderness over Baikal-sea</h3>
             
             <h3>Ah, Samara - little town</h3> -->
-            
-            <h3>Three Little Pigs song (Who's afraid of Big Bad Wolf?)</h3>
-            <p><span class="tags"><em class="major">major</em> <em class="low">low</em></span>
-                From Disney's cartoon of 1933</p>
-            <hr/>
             
             <h3>Death is not the end</h3>
             <p><span class="tags"><em class="major">major</em> <em class="high">high</em> <em class="chords">chords</em></span>
@@ -152,6 +157,7 @@
         $(function() {
             function hideIt() {
                 $(this).parent().remove();
+                return false;
             }
             function showMe() {
                 var url = $(this).attr('data');
